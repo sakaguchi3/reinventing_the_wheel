@@ -1,0 +1,9 @@
+target/*
+!.gitkeep
+bin/*
+/target/
+
+# eclipse
+.classpath
+.project
+.settings/
