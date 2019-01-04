@@ -1,4 +1,4 @@
-package jp.github.ushi.main.genericsa;
+package jp.github.ushi.main.generics;
 
 public class TypeE extends TypeD {
 

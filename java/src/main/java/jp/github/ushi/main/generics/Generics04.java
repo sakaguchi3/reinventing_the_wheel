@@ -1,4 +1,4 @@
-package jp.github.ushi.main.genericsa;
+package jp.github.ushi.main.generics;
 
 import java.util.ArrayList;
 import java.util.List;
