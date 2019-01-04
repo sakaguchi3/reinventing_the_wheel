@@ -17,7 +17,7 @@ public class Generics04<T> {
 		return stack.remove(index);
 	}
 
-	private boolean isEmpty() {
+	public boolean isEmpty() {
 		return stack.size() == 0;
 	}
 
@@ -51,7 +51,7 @@ public class Generics04<T> {
 	 */
 	public static void main(String[] args) {
 
-		final Generics04<TypeC> gen = new Generics04<>();
+		final Generics04<TypeC> stack = new Generics04<>();
 
 		// -- produce 
 
@@ -59,18 +59,25 @@ public class Generics04<T> {
 
 		IntStream.range(0, 10)//
 				.mapToObj(TypeD::new)//
-				.forEach(gen::push);
+				.forEach(producer::add);
 
-		gen.produce(producer);
+		System.out.println("Q1: Is stack empty ?");
+		System.out.println("A: " + stack.isEmpty());
+
+		stack.produce(producer);
+
+		System.out.println("Q2: Is stack empty ?");
+		System.out.println("A: " + stack.isEmpty());
+
 
 		// -- consume
 
 		final List<TypeB> consumer = new ArrayList<>();
-		gen.consume(consumer);
+		stack.consume(consumer);
 
 		// -- result
 
-		System.out.println("------------- 実行結果 -------------");
+		System.out.println("");
 
 		consumer.stream()//
 				.map(v -> v.a)//
